@@ -1,0 +1,10 @@
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Debug\Gongshang_PIC.exe.config
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Debug\Gongshang_PIC.exe
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Debug\Gongshang_PIC.pdb
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\obj\Debug\Gongshang_PIC.csprojResolveAssemblyReference.cache
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\obj\Debug\Gongshang_PIC.frmMain.resources
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\obj\Debug\Gongshang_PIC.frmWater.resources
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\obj\Debug\Gongshang_PIC.Properties.Resources.resources
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\obj\Debug\Gongshang_PIC.csproj.GenerateResource.Cache
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\obj\Debug\Gongshang_PIC.exe
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\obj\Debug\Gongshang_PIC.pdb
