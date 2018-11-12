@@ -23,11 +23,12 @@ namespace Gongshang_PIC
         int Fheight;
         private int box1_xlcX = 0;
         private int box1_xlcY = 0;
-
+        public BackgroundWorker bgWorker1;
 
         public frmWater()
         {
             InitializeComponent();
+
             this.pictureBox1.MouseWheel += new MouseEventHandler(pictureBox1_MouseWheel);
 
         }
@@ -134,46 +135,220 @@ namespace Gongshang_PIC
             }
 
         }
+        private static void CreateFolder(string path)
+        {
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+        }
+        public bool markpic(List<Read__Status> Result, string savepath)
+        {
+            string fullname = AppDomain.CurrentDomain.BaseDirectory + "System\\tel.jpg";
 
+            int oi = 0;
+            if (savepath != null && savepath != "")
+                CreateFolder(savepath);
+            else
+            {
+
+                //  return false;
+
+            }
+            foreach (Read__Status item in Result)
+            {
+                pictureBox1.Image = Image.FromFile(fullname);
+                ig = pictureBox1.Image;
+                FPath = fullname;
+
+
+                bgWorker1.ReportProgress(0, item.gongsimingcheng + "  \r\n\r\n"+oi.ToString() + "/" + Result.Count.ToString());
+                string savefile = savepath + "\\" + item.gongsimingcheng + "-" + item.zhucehao + ".jpg";
+                bool isave = false;
+
+                float fontSize = 11.0f;
+                //名称
+                float rectX = 280;
+                float rectY = 373;
+
+
+                addtxtpic(item.gongsimingcheng, savefile, isave, fontSize, rectX, rectY);
+                //类型
+                rectX = 280;
+                rectY = 419;
+                addtxtpic(item.gongsileixing, savefile, isave, fontSize, rectX, rectY);
+
+                //经营场所
+                rectX = 280;
+                rectY = 459;
+                addtxtpic(item.zhucedizhi, savefile, isave, fontSize, rectX, rectY);
+
+                //经营者
+                rectX = 280;
+                rectY = 500;
+                addtxtpic(item.faren, savefile, isave, fontSize, rectX, rectY);
+
+                //注册资金
+                rectX = 280;
+                rectY = 540;
+                addtxtpic(item.zhucezijin, savefile, isave, fontSize, rectX, rectY);
+
+
+                //注册日期
+                rectX = 280;
+                rectY = 582;
+                string ad = Convert.ToDateTime(item.zhuceriqi).ToString("yyyy年MM月dd日");
+                // 
+                addtxtpic(ad, savefile, isave, fontSize, rectX, rectY);
+
+                //营业期限
+                rectX = 280;
+                rectY = 622;
+                addtxtpic("长期", savefile, isave, fontSize, rectX, rectY);
+
+                //经营范围
+
+                rectX = 280;
+                rectY = 670;
+                List<string> jing = new List<string>();
+                int il = item.jingyingfanwei.Length;
+                char[] ch = item.jingyingfanwei.ToCharArray();
+                int ongo = 0;
+                string tx = "";
+                for (int i = 0; i < ch.Length; i++)
+                {
+
+                    if (ongo < 40)
+                    {
+                        tx += ch[i].ToString();
+                        ongo++;
+                    }
+                    else
+                    {
+                        jing.Add(tx);
+                        tx = ch[i].ToString();
+                        ongo = 0;
+                    }
+
+
+                }
+                jing.Add(tx);
+                tx = "";
+
+                for (int i = 0; i < jing.Count; i++)
+                {
+                    tx += jing[i] + "\r\n";
+                }
+                fontSize = 7.0f;
+                addtxtpic(tx, savefile, isave, fontSize, rectX, rectY);
+
+
+                fontSize = 16.0f;
+                //登记机关 日期
+            
+                rectX = 450;
+                rectY = 940;
+                addtxtpic(ad, savefile, isave, fontSize, rectX, rectY);
+
+                //注册号                
+                rectX = 475;
+                rectY = 325;
+                isave = true;
+                fontSize = 12.0f;
+                oi++;
+                addtxtpic(item.zhucehao, savefile, isave, fontSize, rectX, rectY);
+                
+            }
+            return true;
+
+
+
+
+        }
+
+        private void addtxtpic(string item, string savefile, bool isave, float fontSize, float rectX, float rectY)
+        {
+            AddTextToImg(item, rectX, rectY, fontSize, isave, savefile);
+        }
         private void button2_Click(object sender, EventArgs e)
         {
+
+            #region MyRegion
+            ////名称
+            //float rectX = 280;
+            //float rectY = 305;
+
+            ////类型
+            //rectX = 280;
+            //rectY = 353;
+            ////经营场所
+            //rectX = 280;
+            //rectY = 403;
+            ////经营者
+            //rectX = 280;
+            //rectY = 450;
+            ////组成形式
+            //rectX = 280;
+            //rectY = 500;
+            ////注册日期
+            //rectX = 280;
+            //rectY = 550;
+            ////经营范围
+
+            //rectX = 280;
+            //rectY = 600;
+
+            ////登记机关 日期
+
+            //rectX = 450;
+            //rectY = 795;
+
+            ////注册号
+            //rectX = 460;
+            //rectY = 245;
+
+
+            #endregion
             //名称
             float rectX = 280;
-            float rectY = 305;
+            float rectY = 375;
 
             //类型
             rectX = 280;
-            rectY = 353;
+            rectY = 417;
             //经营场所
             rectX = 280;
-            rectY = 403;
-          //经营者
+            rectY = 457;
+            //经营者
             rectX = 280;
-            rectY = 450;
-            //组成形式
+            rectY = 497;
+            //注册资金
             rectX = 280;
-            rectY = 500;
+            rectY = 537;
             //注册日期
             rectX = 280;
-            rectY = 550;
+            rectY = 577;
+            //营业期限
+
+            rectX = 280;
+            rectY = 617;
             //经营范围
 
             rectX = 280;
-            rectY = 600;
-
+            rectY = 660;
             //登记机关 日期
 
             rectX = 450;
-            rectY = 795;
+            rectY = 930;
 
             //注册号
-            rectX = 460;
-            rectY = 245;
+            rectX = 475;
+            rectY = 320;
 
             float fontSize = 18.0f;
 
 
-            AddTextToImg("nihao ", rectX, rectY, fontSize);
+            AddTextToImg("nihao ", rectX, rectY, fontSize, false, "");
             //makeWatermark(box1_xlcX, box1_xlcY, "123456789");
 
             return;
@@ -206,7 +381,7 @@ namespace Gongshang_PIC
         }
 
 
-        private void AddTextToImg(string text, float rectX, float rectY,float fontSize)
+        private void AddTextToImg(string text, float rectX, float rectY, float fontSize, bool islast, string path)
         {
             //判断指定图片是否存在
             if (!File.Exists(FPath))
@@ -246,14 +421,16 @@ namespace Gongshang_PIC
             g.DrawString(text, font, whiteBrush, textArea);
             //输出方法一：将文件生成并保存到C盘
             // = @Application.streamingAssetsPath + "/test2.jpg";
-            string path = AppDomain.CurrentDomain.BaseDirectory + "tel1.jpg";
+            //string path = AppDomain.CurrentDomain.BaseDirectory + "tel1.jpg";
             pictureBox1.Image = bitmap;
             ig = bitmap;
-
-            //bitmap.Save(path, System.Drawing.Imaging.ImageFormat.Jpeg);
-            //g.Dispose();
-            //bitmap.Dispose();
-            //image.Dispose();
+            if (islast == true)
+            {
+                bitmap.Save(path, System.Drawing.Imaging.ImageFormat.Jpeg);
+                g.Dispose();
+                bitmap.Dispose();
+                image.Dispose();
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

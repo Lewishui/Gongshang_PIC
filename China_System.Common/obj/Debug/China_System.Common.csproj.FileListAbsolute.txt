@@ -19,10 +19,6 @@ D:\Dev Project\mysteap\work_office\AM_DeepercommercialDBMS\China_System.Common\o
 D:\Dev Project\mysteap\work_office\AM_DeepercommercialDBMS\China_System.Common\obj\Debug\China_System.Common.pdb
 D:\Devlop\gongshang_zhengjian\Gongshang_PIC\China_System.Common\bin\Debug\China_System.Common.dll
 D:\Devlop\gongshang_zhengjian\Gongshang_PIC\China_System.Common\bin\Debug\China_System.Common.pdb
-D:\Devlop\gongshang_zhengjian\Gongshang_PIC\China_System.Common\bin\Debug\office.dll
-D:\Devlop\gongshang_zhengjian\Gongshang_PIC\China_System.Common\bin\Debug\Microsoft.Vbe.Interop.dll
-D:\Devlop\gongshang_zhengjian\Gongshang_PIC\China_System.Common\bin\Debug\Microsoft.Office.Interop.Excel.xml
-D:\Devlop\gongshang_zhengjian\Gongshang_PIC\China_System.Common\bin\Debug\office.xml
 D:\Devlop\gongshang_zhengjian\Gongshang_PIC\China_System.Common\obj\Debug\China_System.Common.csprojResolveAssemblyReference.cache
 D:\Devlop\gongshang_zhengjian\Gongshang_PIC\China_System.Common\obj\Debug\China_System.Common.dll
 D:\Devlop\gongshang_zhengjian\Gongshang_PIC\China_System.Common\obj\Debug\China_System.Common.pdb

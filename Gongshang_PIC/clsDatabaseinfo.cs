@@ -9,10 +9,18 @@ namespace Gongshang_PIC
     {
 
         public string ClickType { get; set; }
-        public string Comments { get; set; }
-        public string whose { get; set; }
-        public string Input_Date { get; set; }
-        public string IccValoumn { get; set; }
+        public string gongsimingcheng { get; set; }
+        public string zhucehao { get; set; }
+        public string gongsileixing { get; set; }
+        public string faren { get; set; }
+        public string zhuceriqi { get; set; }
+        public string zhucezijin { get; set; }
+        public string zhucedizhi { get; set; }
+        public string jingyingfanwei { get; set; }
+        public string mark1 { get; set; }
+        public string mark2 { get; set; }
+        public string mark3 { get; set; }
+        public string mark4 { get; set; }
     }
    
 }

@@ -10,7 +10,4 @@ D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\obj\Debug\Gongshang_PI
 D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\obj\Debug\Gongshang_PIC.pdb
 D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\obj\Debug\Gongshang_PIC.frmMessageShow.resources
 D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Debug\China_System.Common.dll
-D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Debug\office.dll
-D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Debug\Microsoft.Vbe.Interop.dll
 D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Debug\China_System.Common.pdb
-D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Debug\office.xml

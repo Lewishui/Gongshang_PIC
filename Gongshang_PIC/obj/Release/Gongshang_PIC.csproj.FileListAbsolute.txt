@@ -1,0 +1,13 @@
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Release\Gongshang_PIC.exe.config
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\obj\Release\Gongshang_PIC.frmMain.resources
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\obj\Release\Gongshang_PIC.frmMessageShow.resources
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\obj\Release\Gongshang_PIC.frmWater.resources
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\obj\Release\Gongshang_PIC.Properties.Resources.resources
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\obj\Release\Gongshang_PIC.csproj.GenerateResource.Cache
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Release\Gongshang_PIC.exe
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Release\Gongshang_PIC.pdb
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Release\China_System.Common.dll
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Release\China_System.Common.pdb
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\obj\Release\Gongshang_PIC.csprojResolveAssemblyReference.cache
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\obj\Release\Gongshang_PIC.exe
+D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\obj\Release\Gongshang_PIC.pdb

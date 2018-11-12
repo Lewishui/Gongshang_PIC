@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,9 +23,17 @@ namespace Gongshang_PIC
         private bool blnBackGroundWorkIsOK = false;
         //后加的后台属性显
         private bool backGroundRunResult;
+
+        List<Read__Status> RResult;
+        string savepath;
         public frmMain()
         {
             InitializeComponent();
+            inputFileName = AppDomain.CurrentDomain.BaseDirectory + "System\\qiyeziliao.xlsx";
+            this.pathTextBox.Text = inputFileName;
+            this.textBox1.Text = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss");
+            savepath = this.textBox1.Text;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -64,12 +73,7 @@ namespace Gongshang_PIC
 
 
 
-            var form = new frmWater();
 
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-                // InitializeDataSource();
-            }
 
         }
 
@@ -82,7 +86,7 @@ namespace Gongshang_PIC
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 inputFileName = ofd.FileName;
-                this.textBox1.Text = inputFileName;
+                this.pathTextBox.Text = inputFileName;
 
             }
             else
@@ -145,15 +149,23 @@ namespace Gongshang_PIC
             DateTime oldDate = DateTime.Now;
 
             //初始化信息
-            //clsAllnew BusinessHelp = new clsAllnew();
+            frmWater BusinessHelp = new frmWater();
 
-            //BusinessHelp.pbStatus = pbStatus;
-            //BusinessHelp.tsStatusLabel1 = toolStripLabel2;
+            RResult = new List<Read__Status>();
 
-            //BusinessHelp.InputClickStatus_Server("ARIR", "ARIR READ", username);
-            string path = AppDomain.CurrentDomain.BaseDirectory + "Results\\ARIR09012014 -09302014 _0721083820.xls";
+            RResult = ReadfindngFile(inputFileName);
 
-            //Report_Server = BusinessHelp.New_Read_DOWNLOAD_ARIR_File();
+
+            //  var form = new frmWater();
+            BusinessHelp.bgWorker1 = bgWorker;
+            BusinessHelp.markpic(RResult, savepath);
+            //if (form.ShowDialog() == DialogResult.OK)
+            //{
+            //    // InitializeDataSource();
+            //}
+
+            //string savepath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + DateTime.Now.ToString("yyyyMMddHHmmss");
+
 
             DateTime FinishTime = DateTime.Now;
             TimeSpan s = DateTime.Now - oldDate;
@@ -168,7 +180,7 @@ namespace Gongshang_PIC
 
             List<Read__Status> Result = new List<Read__Status>();
 
-            string path = AppDomain.CurrentDomain.BaseDirectory + "Resources\\ALL MU.xls";
+            //string path = AppDomain.CurrentDomain.BaseDirectory + "Resources\\qiyeziliao.xlsx";
             System.Globalization.CultureInfo CurrentCI = System.Threading.Thread.CurrentThread.CurrentCulture;
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
 
@@ -177,53 +189,54 @@ namespace Gongshang_PIC
                 "htc", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
                 Type.Missing, Type.Missing, Type.Missing, Type.Missing);
 
-            Microsoft.Office.Interop.Excel.Worksheet WS = (Microsoft.Office.Interop.Excel.Worksheet)analyWK.Worksheets["All Details"];
+            Microsoft.Office.Interop.Excel.Worksheet WS = (Microsoft.Office.Interop.Excel.Worksheet)analyWK.Worksheets[1];
             Microsoft.Office.Interop.Excel.Range rng;
-            rng = WS.get_Range(WS.Cells[2, 1], WS.Cells[WS.UsedRange.Rows.Count, 30]);
+            //rng = WS.get_Range(WS.Cells[2, 1], WS.Cells[WS.UsedRange.Rows.Count, 30]);
+            rng = WS.Range[WS.Cells[2, 1], WS.Cells[WS.UsedRange.Rows.Count, 30]];
             int rowCount = WS.UsedRange.Rows.Count - 1;
             object[,] o = new object[1, 1];
             o = (object[,])rng.Value2;
             clsCommHelp.CloseExcel(excelApp, analyWK);
 
-            for (int i = 5; i <= rowCount; i++)
+            for (int i = 2; i <= rowCount; i++)
             {
                 bgWorker.ReportProgress(0, "正在导入   :  " + i.ToString() + "/" + rowCount.ToString());
                 Read__Status temp = new Read__Status();
 
                 #region 基础信息
 
-                //temp.MU = "";
-                //if (o[i, 1] != null)
-                //    temp.MU = o[i, 1].ToString().Trim();
+                temp.gongsimingcheng = "";
+                if (o[i, 1] != null)
+                    temp.gongsimingcheng = o[i, 1].ToString().Trim();
 
 
-                //temp.PINPAI = "";
-                //if (o[i, 2] != null)
-                //    temp.PINPAI = o[i, 2].ToString().Trim();
+                temp.zhucehao = "";
+                if (o[i, 2] != null)
+                    temp.zhucehao = o[i, 2].ToString().Trim();
 
-                //temp.PICIHAO = "";
-                //if (o[i, 3] != null)
-                //    temp.PICIHAO = o[i, 3].ToString().Trim();
+                temp.gongsileixing = "";
+                if (o[i, 3] != null)
+                    temp.gongsileixing = o[i, 3].ToString().Trim();
 
-                //temp.XUHAO = "";
-                //if (o[i, 4] != null)
-                //    temp.XUHAO = o[i, 4].ToString().Trim();
-                //if (temp.XUHAO == "" || temp.XUHAO == null)
-                //    continue;
+                temp.faren = "";
+                if (o[i, 4] != null)
+                    temp.faren = o[i, 4].ToString().Trim();
+                if (temp.faren == "" || temp.faren == null)
+                    continue;
 
-                //temp.MPR_FUKUANSHENQINGHAO = "";
-                //if (o[i, 5] != null)
-                //    temp.MPR_FUKUANSHENQINGHAO = o[i, 5].ToString().Trim(); //clsCommHelp.objToDateTime(o[i, 5]);
-                //temp.TIAOXINGMA = "";
-                //if (o[i, 6] != null)
-                //    temp.TIAOXINGMA = o[i, 6].ToString().Trim(); //clsCommHelp.objToDateTime(o[i, 6]);
+                temp.zhuceriqi = "";
+                if (o[i, 5] != null)
+                    temp.zhuceriqi = clsCommHelp.objToDateTime(o[i, 5]);// o[i, 5].ToString().Trim(); 
+                temp.zhucezijin = "";
+                if (o[i, 6] != null)
+                    temp.zhucezijin = o[i, 6].ToString().Trim(); //clsCommHelp.objToDateTime(o[i, 6]);
 
-                //temp.XIANGMU = "";
-                //if (o[i, 7] != null)
-                //    temp.XIANGMU = o[i, 7].ToString().Trim();
-                //temp.PINGZHENGHAO = "";
-                //if (o[i, 8] != null)
-                //    temp.PINGZHENGHAO = o[i, 8].ToString().Trim();
+                temp.zhucedizhi = "";
+                if (o[i, 7] != null)
+                    temp.zhucedizhi = o[i, 7].ToString().Trim();
+                temp.jingyingfanwei = "";
+                if (o[i, 8] != null)
+                    temp.jingyingfanwei = o[i, 8].ToString().Trim();
 
                 //temp.NEIRONGMIAOSHU = "";
                 //if (o[i, 9] != null)
@@ -293,6 +306,34 @@ namespace Gongshang_PIC
             return Result;
 
         }
-    
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var form = new frmWater();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                // InitializeDataSource();
+            }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Excel files (*.xls,*.xlsx)|*.xls;*.xlsx";
+            ofd.FileName = "";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                savepath = ofd.FileName;
+                this.textBox1.Text = savepath;
+
+            }
+            else
+            {
+                return;
+            }
+
+        }
+
     }
 }
