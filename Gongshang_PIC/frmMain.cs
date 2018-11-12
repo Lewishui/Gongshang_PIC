@@ -66,15 +66,12 @@ namespace Gongshang_PIC
 
             catch (Exception ex)
             {
-                return;
+                MessageBox.Show("错误" + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return ;
                 throw ex;
             }
-
-
-
-
-
-
+            
         }
 
         private void openFileBtton_Click(object sender, EventArgs e)

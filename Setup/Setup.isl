@@ -344,7 +344,9 @@
 		<row><td>Gongshang_PIC.vshost.exe</td><td>{54A1B28D-F5DD-4B53-AD4F-0BD278A47DC2}</td><td>INSTALLDIR</td><td>2</td><td/><td>gongshang_pic.vshost.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{79EC4D25-89CE-4CDF-81A8-E8093A30CDFD}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{03DECCA9-160A-42FA-BFC4-B5188D1B0C29}</td><td>SYSTEM</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Microsoft.Office.Interop.Excel.dll</td><td>{947501C6-0191-46D9-8C00-A8793C0AAE15}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.office.interop.exc</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>NewComponent1</td><td>{7FC3974E-2D65-497E-A50F-836A95FADD98}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Office.dll</td><td>{4B884A4C-F3D1-4EE8-BAB0-287D12F4B6A1}</td><td>INSTALLDIR</td><td>2</td><td/><td>office.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1868,7 +1870,9 @@
 		<row><td>AlwaysInstall</td><td>Gongshang_PIC.vshost.exe</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
+		<row><td>AlwaysInstall</td><td>Microsoft.Office.Interop.Excel.dll</td></row>
 		<row><td>AlwaysInstall</td><td>NewComponent1</td></row>
+		<row><td>AlwaysInstall</td><td>Office.dll</td></row>
 	</table>
 
 	<table name="File">
@@ -1890,6 +1894,10 @@
 		<row><td>gongshang_pic.pdb</td><td>ISX_DEFAULTCOMPONENT</td><td>GONGSH~1.PDB|Gongshang_PIC.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Debug\Gongshang_PIC.pdb</td><td>1</td><td/></row>
 		<row><td>gongshang_pic.vshost.exe</td><td>Gongshang_PIC.vshost.exe</td><td>GONGSH~1.EXE|Gongshang_PIC.vshost.exe</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Debug\Gongshang_PIC.vshost.exe</td><td>1</td><td/></row>
 		<row><td>gongshang_pic.vshost.exe.con</td><td>ISX_DEFAULTCOMPONENT</td><td>GONGSH~1.CON|Gongshang_PIC.vshost.exe.config</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Debug\Gongshang_PIC.vshost.exe.config</td><td>1</td><td/></row>
+		<row><td>microsoft.office.interop.exc</td><td>Microsoft.Office.Interop.Excel.dll</td><td>MICROS~1.DLL|Microsoft.Office.Interop.Excel.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Debug\Microsoft.Office.Interop.Excel.dll</td><td>1</td><td/></row>
+		<row><td>microsoft.office.interop.exc1</td><td>ISX_DEFAULTCOMPONENT</td><td>MICROS~1.XML|Microsoft.Office.Interop.Excel.xml</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Debug\Microsoft.Office.Interop.Excel.xml</td><td>1</td><td/></row>
+		<row><td>office.dll</td><td>Office.dll</td><td>Office.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Debug\Office.dll</td><td>1</td><td/></row>
+		<row><td>office.xml</td><td>ISX_DEFAULTCOMPONENT</td><td>office.xml</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Debug\office.xml</td><td>1</td><td/></row>
 		<row><td>qiyeziliao.xlsx</td><td>ISX_DEFAULTCOMPONENT1</td><td>QIYEZI~1.XLS|qiyeziliao.xlsx</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Debug\System\qiyeziliao.xlsx</td><td>1</td><td/></row>
 		<row><td>tel.jpg</td><td>ISX_DEFAULTCOMPONENT1</td><td>tel.jpg</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Debug\System\tel.jpg</td><td>1</td><td/></row>
 		<row><td>tel1.jpg</td><td>ISX_DEFAULTCOMPONENT1</td><td>tel1.jpg</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Devlop\gongshang_zhengjian\Gongshang_PIC\Gongshang_PIC\bin\Debug\System\tel1.jpg</td><td>1</td><td/></row>
@@ -2155,7 +2163,9 @@
 		<row><td>Gongshang_PIC.vshost.exe</td><td/><td/><td>_4D255EB3_7016_49FC_A543_630D6AC096EC_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_A1891014_A262_4A01_9BEE_62F60873D15C_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_367870BF_7D82_47B7_BD5F_5E59C96BBB0D_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Microsoft.Office.Interop.Excel.dll</td><td/><td/><td>_FA011EF6_BD4F_4DAD_9E93_B3ECA9202E68_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>NewComponent1</td><td/><td/><td>_22D13213_4CF9_451B_B066_9C559717177E_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Office.dll</td><td/><td/><td>_956A5DBE_724F_4FEB_8A59_8A82788B33F8_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
