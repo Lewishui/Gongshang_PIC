@@ -24,6 +24,7 @@ namespace Gongshang_PIC
         private int box1_xlcX = 0;
         private int box1_xlcY = 0;
         public BackgroundWorker bgWorker1;
+        int Add_rectHeight;
 
         public frmWater()
         {
@@ -162,14 +163,14 @@ namespace Gongshang_PIC
                 FPath = fullname;
 
 
-                bgWorker1.ReportProgress(0, item.gongsimingcheng + "  \r\n\r\n"+oi.ToString() + "/" + Result.Count.ToString());
+                bgWorker1.ReportProgress(0, item.gongsimingcheng + "  \r\n\r\n" + oi.ToString() + "/" + Result.Count.ToString());
                 string savefile = savepath + "\\" + item.gongsimingcheng + "-" + item.zhucehao + ".jpg";
                 bool isave = false;
 
-                float fontSize = 11.0f;
+                float fontSize = 13.0f;
                 //名称
                 float rectX = 280;
-                float rectY = 373;
+                float rectY = 378;
 
 
                 addtxtpic(item.gongsimingcheng, savefile, isave, fontSize, rectX, rectY);
@@ -181,11 +182,42 @@ namespace Gongshang_PIC
                 //经营场所
                 rectX = 280;
                 rectY = 459;
-                addtxtpic(item.zhucedizhi, savefile, isave, fontSize, rectX, rectY);
+                fontSize = 11.0f;
+
+                List<string> jing = new List<string>();
+                int il = item.zhucedizhi.Length;
+                char[] ch = item.zhucedizhi.ToCharArray();
+                int ongo = 0;
+                string tx = "";
+                for (int i = 0; i < ch.Length; i++)
+                {
+
+                    if (ongo < 24)
+                    {
+                        tx += ch[i].ToString();
+                        ongo++;
+                    }
+                    else
+                    {
+                        jing.Add(tx);
+                        tx = ch[i].ToString();
+                        ongo = 0;
+                    }
+                }
+                jing.Add(tx);
+                tx = "";
+
+                for (int i = 0; i < jing.Count; i++)
+                {
+                    tx += jing[i] + "\r\n";
+                }
+
+                addtxtpic(tx, savefile, isave, fontSize, rectX, rectY);
 
                 //经营者
                 rectX = 280;
                 rectY = 500;
+                fontSize = 13.0f;
                 addtxtpic(item.faren, savefile, isave, fontSize, rectX, rectY);
 
                 //注册资金
@@ -210,15 +242,15 @@ namespace Gongshang_PIC
 
                 rectX = 280;
                 rectY = 670;
-                List<string> jing = new List<string>();
-                int il = item.jingyingfanwei.Length;
-                char[] ch = item.jingyingfanwei.ToCharArray();
-                int ongo = 0;
-                string tx = "";
+               jing = new List<string>();
+                  il = item.jingyingfanwei.Length;
+               ch = item.jingyingfanwei.ToCharArray();
+                ongo = 0;
+                tx = "";
                 for (int i = 0; i < ch.Length; i++)
                 {
 
-                    if (ongo < 40)
+                    if (ongo < 19)
                     {
                         tx += ch[i].ToString();
                         ongo++;
@@ -239,13 +271,14 @@ namespace Gongshang_PIC
                 {
                     tx += jing[i] + "\r\n";
                 }
-                fontSize = 7.0f;
+                fontSize = 13.0f;
+                Add_rectHeight = 120;
                 addtxtpic(tx, savefile, isave, fontSize, rectX, rectY);
-
+                Add_rectHeight = 40;
 
                 fontSize = 16.0f;
                 //登记机关 日期
-            
+
                 rectX = 450;
                 rectY = 940;
                 addtxtpic(ad, savefile, isave, fontSize, rectX, rectY);
@@ -257,7 +290,7 @@ namespace Gongshang_PIC
                 fontSize = 12.0f;
                 oi++;
                 addtxtpic(item.zhucehao, savefile, isave, fontSize, rectX, rectY);
-                
+
             }
             return true;
 
@@ -407,14 +440,14 @@ namespace Gongshang_PIC
             //float rectX = 280;
             //float rectY = 305;
             float rectWidth = text.Length * (fontSize + 40);
-            float rectHeight = fontSize + 40;
+            float rectHeight = fontSize + Add_rectHeight;
             //声明矩形域
             RectangleF textArea = new RectangleF(rectX, rectY, rectWidth, rectHeight);
             //定义字体
-            System.Drawing.Font font = new System.Drawing.Font("黑体", fontSize, System.Drawing.FontStyle.Regular);
-            //font.Bold = true;
+            System.Drawing.Font font = new System.Drawing.Font("宋体", fontSize, System.Drawing.FontStyle.Bold);
+            // font.Bold = true;
             //白笔刷，画文字用
-            Brush whiteBrush = new SolidBrush(System.Drawing.Color.Black);
+            Brush whiteBrush = new SolidBrush(System.Drawing.Color.Gray);
             //黑笔刷，画背景用
             //Brush blackBrush = new SolidBrush(Color.Black);   
             //g.FillRectangle(blackBrush, rectX, rectY, rectWidth, rectHeight);
