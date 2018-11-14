@@ -156,6 +156,7 @@ namespace Gongshang_PIC
                 //  return false;
 
             }
+           
             foreach (Read__Status item in Result)
             {
                 pictureBox1.Image = Image.FromFile(fullname);
@@ -164,13 +165,13 @@ namespace Gongshang_PIC
 
 
                 bgWorker1.ReportProgress(0, item.gongsimingcheng + "  \r\n\r\n" + oi.ToString() + "/" + Result.Count.ToString());
-                string savefile = savepath + "\\" + item.gongsimingcheng + "-" + item.zhucehao + ".jpg";
+                string savefile = savepath + "\\" + item.gongsimingcheng + "----" + item.zhucehao + ".jpg";
                 bool isave = false;
-
+                Add_rectHeight = 40;
                 float fontSize = 13.0f;
                 //名称
                 float rectX = 280;
-                float rectY = 378;
+                float rectY = 381;
 
 
                 addtxtpic(item.gongsimingcheng, savefile, isave, fontSize, rectX, rectY);
@@ -181,7 +182,7 @@ namespace Gongshang_PIC
 
                 //经营场所
                 rectX = 280;
-                rectY = 459;
+                rectY = 462;
                 fontSize = 11.0f;
 
                 List<string> jing = new List<string>();
@@ -192,7 +193,7 @@ namespace Gongshang_PIC
                 for (int i = 0; i < ch.Length; i++)
                 {
 
-                    if (ongo < 24)
+                    if (ongo < 30)
                     {
                         tx += ch[i].ToString();
                         ongo++;
@@ -216,13 +217,13 @@ namespace Gongshang_PIC
 
                 //经营者
                 rectX = 280;
-                rectY = 500;
+                rectY = 505;
                 fontSize = 13.0f;
                 addtxtpic(item.faren, savefile, isave, fontSize, rectX, rectY);
 
                 //注册资金
                 rectX = 280;
-                rectY = 540;
+                rectY = 545;
                 addtxtpic(item.zhucezijin, savefile, isave, fontSize, rectX, rectY);
 
 
@@ -281,7 +282,7 @@ namespace Gongshang_PIC
 
                 rectX = 450;
                 rectY = 940;
-                addtxtpic(ad, savefile, isave, fontSize, rectX, rectY);
+              //  addtxtpic(ad, savefile, isave, fontSize, rectX, rectY);
 
                 //注册号                
                 rectX = 475;

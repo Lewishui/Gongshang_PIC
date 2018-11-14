@@ -28,8 +28,8 @@ namespace Gongshang_PIC
             int timeTotal = ts.Days;
             if (timeTotal < 0)
             {
-                MessageBox.Show("测试版本运行期已到，请将剩余费用付清 !");
-                return;
+                //MessageBox.Show("测试版本运行期已到，请将剩余费用付清 !");
+                //return;
             }
 
 
